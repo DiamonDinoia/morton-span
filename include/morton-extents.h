@@ -15,6 +15,7 @@
 
 #include <libmorton/morton.h>
 
+namespace morton {
 struct MortonExtents {
     template <class Extents>
     struct mapping {
@@ -53,5 +54,5 @@ struct MortonExtents {
         extents_type m_extents;
     };
 };
-
+}  // namespace morton
 #endif  // MORTON_SPAN_MORTON_EXTENTS_H

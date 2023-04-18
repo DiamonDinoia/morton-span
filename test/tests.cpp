@@ -19,7 +19,7 @@ TEST_CASE("2D case") {
     const auto  x = 64, y = 64, size = x * y;
     vector<int> v(size);
     mdspan<int, extents<std::size_t, dynamic_extent, dynamic_extent>,
-           MortonExtents>
+           morton::MortonExtents>
         test_m(v.data(), x, y);
     for (auto i = 0; i < x; ++i) {
         for (auto j = 0; j < y; ++j) { test_m(i, j)++; }
@@ -32,7 +32,7 @@ TEST_CASE("3D case") {
     vector<int> v(size);
     mdspan<int,
            extents<std::size_t, dynamic_extent, dynamic_extent, dynamic_extent>,
-           MortonExtents>
+           morton::MortonExtents>
         test_m(v.data(), x, y, z);
     for (auto i = 0; i < x; ++i) {
         for (auto j = 0; j < y; ++j) {
